@@ -1,9 +1,11 @@
 import random
 import pandas as pd # type: ignore
+import os
+
+from datetime import datetime
+
 from src.utils.calc_distance import CalcDistancias as calc_dist
 from src.utils.save_df_to_json import SaveFile
-import os
-from datetime import datetime
 
 class HillClimbing():
     def __init__(self):
@@ -91,25 +93,6 @@ class HillClimbing():
         SaveFile().save_json_to_file(df=df_steps, path="hill_climbing\\tsm")
         result_json = df_steps.to_json(orient='records', lines=True)
         return result_json
-
-    def save_json_to_file(self, df):
-        """
-        Função para salvar um DataFrame diretamente em um arquivo JSON usando pandas.
-        Cria uma estrutura de pastas ano/mês/dia e salva o arquivo com um nome único.
-        """
-        try:
-            now = datetime.now()
-            path_default = f'./output/{now.year}/{now.month}/{now.day}/'
-            os.makedirs(path_default, exist_ok=True)
-            
-            # Gera um nome de arquivo único
-            file_count = len(os.listdir(path_default))
-            file_name = f"output_{file_count + 1}.json"
-            
-            df.to_json(os.path.join(path_default, file_name), orient='records', lines=True)
-            print(f"Dados salvos com sucesso no arquivo {file_name}")
-        except Exception as e:
-            print(f"Erro ao salvar o arquivo JSON: {e}")
     
 # if __name__ == "__main__":
 #     cities = [(random.randint(0, 100), random.randint(0, 100)) for _ in range(10)]
