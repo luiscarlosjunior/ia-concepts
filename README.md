@@ -1,6 +1,7 @@
 # IA Concepts
 
-Este projeto tem como objetivo explorar e demonstrar conceitos fundamentais de Inteligência Artificial (IA). Através de exemplos práticos e teóricos, abordamos diversas áreas da IA, incluindo:
+Este projeto tem como objetivo explorar e demonstrar conceitos fundamentais de Inteligência Artificial (IA). 
+Através de exemplos práticos e teóricos, abordamos diversas áreas da IA, incluindo:
 
 ## Conteúdos
 

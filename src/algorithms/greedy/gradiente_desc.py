@@ -1,6 +1,20 @@
 import numpy as np
 
 def gradient_descent(x, y, learning_rate=0.01, iterations=1000):
+    """ O gradiente descendente é um algoritmo iterativo 
+    usado para encontrar o mínimo de uma função. 
+    Em termos simples, ele ajusta os parâmetros do modelo para minimizar a função de custo, 
+    que mede o quão bem o modelo está se ajustando aos dados.
+
+    Args:
+        x (_type_): _description_
+        y (_type_): _description_
+        learning_rate (float, optional): _description_. Defaults to 0.01.
+        iterations (int, optional): _description_. Defaults to 1000.
+
+    Returns:
+        _type_: _description_
+    """
     m = 0
     b = 0
     n = len(x)
