@@ -86,7 +86,7 @@ O Tabu Search (Busca Tabu) é uma metaheurística desenvolvida por Fred Glover q
 
 ## Implementação
 
-A implementação está localizada em `src/algorithms/single/tabusearch_tsm.py` e utiliza:
+A implementação está localizada em `src/algorithms/metaheuristics/tabu_search_tsp.py` e utiliza:
 
 - **Estruturas de dados**: Pandas DataFrame para lista tabu e histórico
 - **Geração de vizinhos**: Troca de posições entre duas cidades

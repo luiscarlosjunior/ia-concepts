@@ -1,7 +1,7 @@
 from fastapi import APIRouter, HTTPException # type: ignore
 from pydantic import BaseModel # type: ignore
 from typing import List, Tuple
-from src.algorithms.single.tabusearch_tsm import TabuSearchTSP
+from src.algorithms.metaheuristics.tabu_search_tsp import TabuSearchTSP
 
 endpoints = APIRouter()
 
