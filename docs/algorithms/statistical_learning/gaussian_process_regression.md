@@ -60,7 +60,7 @@ Isso significa: "a função f é distribuída como um Processo Gaussiano com mé
 
 1. **📊 Quantificação de Incerteza:** Fornece intervalos de confiança naturalmente
 2. **🎯 Não-Paramétrico:** Não assume forma funcional específica
-3. **🧮 Fundamentação Bayesiana:** Incorpora conhecimento prévio de forma principled
+3. **🧮 Fundamentação Bayesiana:** Incorpora conhecimento prévio de forma rigorosa e principiada
 4. **🔧 Flexível:** Através da escolha do kernel
 5. **📈 Interpretável:** Comportamento do modelo é compreensível
 
@@ -1299,7 +1299,7 @@ import gpytorch
 
 ### **8.1 💡 Principais Aprendizados**
 
-Processos Gaussianos representam uma abordagem **elegante e principled** para regressão e predição:
+Processos Gaussianos representam uma abordagem **elegante e rigorosa** para regressão e predição:
 
 1. **📊 Distribuições sobre Funções:** GP é uma distribuição de probabilidade sobre funções inteiras
 2. **🎯 Incerteza Quantificada:** Fornece não apenas predições, mas confiança nelas
