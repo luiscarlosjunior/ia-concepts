@@ -14,6 +14,18 @@ Documentação técnica completa dos algoritmos implementados, organizados por c
 - **[Simulated Annealing](algorithms/metaheuristics/simulated_annealing.md)**: Algoritmo inspirado no processo de recozimento
 - **[Tabu Search](algorithms/metaheuristics/tabu_search.md)**: Algoritmo com memória para evitar ciclos
 
+#### `/optimization` - [Algoritmos de Otimização](algorithms/optimization/)
+- **[Cross-Entropy Method (CE)](algorithms/optimization/cross_entropy_method.md)**: Método de otimização estocástica baseado em amostragem adaptativa e teoria da informação
+
+#### `/statistical_learning` - [Aprendizado Estatístico](algorithms/statistical_learning/)
+- **[Gaussian Process Regression (GPR)](algorithms/statistical_learning/gaussian_process_regression.md)**: Regressão não-paramétrica com quantificação de incerteza
+
+#### `/probabilistic_models` - [Modelos Probabilísticos](algorithms/probabilistic_models/)
+- **[Dynamic Bayesian Networks (DBN)](algorithms/probabilistic_models/dynamic_bayesian_networks.md)**: Modelos gráficos probabilísticos para processos temporais
+
+#### `/reliability_analysis` - [Análise de Confiabilidade](algorithms/reliability_analysis/)
+- **[BUS com Subset Simulation (SUS)](algorithms/reliability_analysis/bus_subset_simulation.md)**: Método para estimação de eventos raros e atualização bayesiana
+
 ### `/images` - Recursos Visuais
 Diagramas, fluxogramas e imagens utilizados na documentação.
 
