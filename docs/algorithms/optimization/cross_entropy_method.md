@@ -89,6 +89,11 @@ def cross_entropy_method(f_objective, theta_init, N, rho, max_iter, alpha=0.7):
     """
     Método de Entropia Cruzada para otimização
     
+    Nota: As funções auxiliares (gerar_amostras, argsort, estimar_parametros, 
+    mean, verificar_convergencia) são operações abstratas que serão 
+    implementadas em detalhes nas seções seguintes, dependendo do tipo 
+    de problema (contínuo ou discreto).
+    
     Args:
         f_objective: Função objetivo a maximizar
         theta_init: Parâmetros iniciais da distribuição

@@ -331,6 +331,7 @@ class HMM:
             tol: Tolerância para convergência
         """
         T = len(observations)
+        prev_likelihood = float('-inf')
         
         for iteration in range(max_iter):
             # E-Step: Forward-Backward
