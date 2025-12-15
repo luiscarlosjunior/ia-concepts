@@ -1065,7 +1065,7 @@ def lexicographic_comparison(ind1, ind2):
         return ind1 if ind1.size() < ind2.size() else ind2
     else:
         # Fitness diferente: preferir melhor fitness
-        return ind1 if ind1.fitness < ind2.fitness() else ind2
+        return ind1 if ind1.fitness < ind2.fitness else ind2
 ```
 
 ---
@@ -1327,7 +1327,7 @@ tree_viz.render('gp_tree', format='png', view=True)
 - **GECCO:** Genetic and Evolutionary Computation Conference
 - **EuroGP:** European Conference on Genetic Programming
 - **GP-list:** Mailing list da comunidade GP
-- **GitHub:** Váriasprojetos open-source de GP
+- **GitHub:** Vários projetos open-source de GP
 
 ---
 
