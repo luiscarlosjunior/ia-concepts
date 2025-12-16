@@ -7,8 +7,13 @@ Esta pasta contém a documentação detalhada dos algoritmos e conceitos impleme
 ### `/algorithms` - Documentação de Algoritmos
 Documentação técnica completa dos algoritmos implementados, organizados por categoria:
 
-#### `/greedy` - Algoritmos Gulosos
+#### `/greedy` - [Algoritmos Gulosos](algorithms/greedy/)
 - **[Hill Climbing](algorithms/greedy/hill_climbing.md)**: Algoritmo de busca local para otimização
+- **[Algoritmo de Dijkstra](algorithms/greedy/dijkstra.md)**: Caminho mais curto em grafos com pesos não-negativos
+- **[Algoritmo de Kruskal](algorithms/greedy/kruskal.md)**: Árvore geradora mínima usando Union-Find
+- **[Algoritmo de Prim](algorithms/greedy/prim.md)**: Árvore geradora mínima crescendo de um vértice
+- **[Codificação de Huffman](algorithms/greedy/huffman.md)**: Compressão ótima de dados sem perdas
+- **[Seleção de Atividades](algorithms/greedy/activity_selection.md)**: Exemplo clássico de algoritmo guloso para agendamento
 
 #### `/metaheuristics` - Metaheurísticas 
 - **[Simulated Annealing](algorithms/metaheuristics/simulated_annealing.md)**: Algoritmo inspirado no processo de recozimento
