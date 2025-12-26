@@ -123,20 +123,21 @@ class TabuSearchTSPGraph:
         return self.best_solution
 
 
-# Exemplo de uso com um grafo
-# Grafo definido como {cidade: [(cidade_destino, distância), ...]}
-graph = {
-    "A": [("B", 10), ("C", 15)],
-    "B": [("A", 10), ("D", 12)],
-    "C": [("A", 15), ("D", 10)],
-    "D": [("B", 12), ("C", 10)],
-}
-
-tabu_search_graph = TabuSearchTSPGraph(graph, tabu_list_size=5, max_iterations=100)
-best_solution = tabu_search_graph.search()
-
-print(f"\nBest solution found: {best_solution}")
-print("\nTabu List (Final):")
-print(tabu_search_graph.tabu_list)
-print("\nSearch History:")
-print(tabu_search_graph.history)
+if __name__ == "__main__":
+    # Exemplo de uso com um grafo
+    # Grafo definido como {cidade: [(cidade_destino, distância), ...]}
+    graph = {
+        "A": [("B", 10), ("C", 15)],
+        "B": [("A", 10), ("D", 12)],
+        "C": [("A", 15), ("D", 10)],
+        "D": [("B", 12), ("C", 10)],
+    }
+    
+    tabu_search_graph = TabuSearchTSPGraph(graph, tabu_list_size=5, max_iterations=100)
+    best_solution = tabu_search_graph.search()
+    
+    print(f"\nBest solution found: {best_solution}")
+    print("\nTabu List (Final):")
+    print(tabu_search_graph.tabu_list)
+    print("\nSearch History:")
+    print(tabu_search_graph.history)

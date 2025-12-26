@@ -113,15 +113,16 @@ class TabuSearchTSP:
         SaveFile().save_json_to_file(df=self.history, path="tabu_search_tsp", informacao=self.informacoes())
         return self.best_solution
 
-# Exemplo de uso
-# Definindo as coordenadas das cidades (x, y)
-cities = [(random.randint(0, 100), random.randint(0, 100)) for _ in range(10)]
-
-tabu_search_tsp = TabuSearchTSP(cities, tabu_list_size=5, max_iterations=100)
-best_solution = tabu_search_tsp.search()
-
-print(f"\nBest solution found: {best_solution}")
-print("\nTabu List (Final):")
-print(tabu_search_tsp.tabu_list)
-print("\nSearch History:")
-print(tabu_search_tsp.history)
+if __name__ == "__main__":
+    # Exemplo de uso
+    # Definindo as coordenadas das cidades (x, y)
+    cities = [(random.randint(0, 100), random.randint(0, 100)) for _ in range(10)]
+    
+    tabu_search_tsp = TabuSearchTSP(cities, tabu_list_size=5, max_iterations=100)
+    best_solution = tabu_search_tsp.search()
+    
+    print(f"\nBest solution found: {best_solution}")
+    print("\nTabu List (Final):")
+    print(tabu_search_tsp.tabu_list)
+    print("\nSearch History:")
+    print(tabu_search_tsp.history)
