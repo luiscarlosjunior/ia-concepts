@@ -39,11 +39,15 @@ Através de exemplos práticos e teóricos, abordamos diversas áreas da IA, inc
   - `/visualization`: Visualização e ferramentas
 - **`/src`**: Código fonte organizado por algoritmos e funcionalidades
   - `/algorithms/greedy`: Algoritmos gulosos e de gradiente
-  - `/algorithms/metaheuristics`: Metaheurísticas avançadas
+  - `/algorithms/metaheuristics`: Metaheurísticas (Simulated Annealing, Tabu Search)
   - `/api`: API REST para execução de algoritmos
   - `/services`: Serviços auxiliares
   - `/utils`: Utilitários e funções auxiliares
+  - `main.py`: Entry point da API REST
+  - `cli.py`: Interface de linha de comando
 - **`/docs`**: Documentação detalhada sobre cada conceito e algoritmo
+  - `/algorithms`: Documentação de algoritmos organizados por tipo
+  - `/statistics`: Teoria estatística e métodos numéricos
 - **`/datasets`**: Conjunto de dados utilizados nos exemplos
 - **`/scripts`**: Scripts auxiliares para execução e automação
 - **`/output`**: Resultados e outputs de execuções
@@ -63,6 +67,12 @@ jupyter notebook notebooks/
 ```bash
 # Iniciar servidor FastAPI
 python src/main.py
+```
+
+### Executando a Interface CLI
+```bash
+# Executar interface de linha de comando
+python src/cli.py
 ```
 
 ## 🤝 Como Contribuir

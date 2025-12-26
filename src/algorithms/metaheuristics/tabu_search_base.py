@@ -1,7 +1,7 @@
 import random
 import pandas as pd
 
-class TabuSearchGeneric:
+class TabuSearchBase:
     def __init__(self, initial_solution, tabu_list_size, max_iterations, neighbor_func, eval_func, stop_func=None):
         """
         Args:
@@ -27,7 +27,7 @@ class TabuSearchGeneric:
         Função para retornar os parâmetros e soluções para análise externa.
         """
         return {
-            "algoritmo": "tabu_search_generic",
+            "algoritmo": "tabu_search_base",
             "solucao_inicial": self.current_solution,
             "melhor_solucao": self.best_solution
         }
@@ -90,44 +90,47 @@ class TabuSearchGeneric:
 
         return self.best_solution
 
-# Exemplo de uso com um problema de Caixeiro Viajante
-
-# Função para gerar vizinhos (trocar duas cidades de lugar)
-def tsp_neighbors(solution):
-    neighbors = []
-    for i in range(len(solution)):
-        for j in range(i + 1, len(solution)):
-            neighbor = solution[:]
-            neighbor[i], neighbor[j] = neighbor[j], neighbor[i]  # Troca de cidades
-            neighbors.append(neighbor)
-    return neighbors
-
-# Função para avaliar a solução (distância total)
-def tsp_evaluate(solution, cities):
-    total_distance = 0
-    for i in range(len(solution) - 1):
-        total_distance += math.sqrt((cities[solution[i + 1]][0] - cities[solution[i]][0]) ** 2 + (cities[solution[i + 1]][1] - cities[solution[i]][1]) ** 2)
-    # Volta à cidade inicial
-    total_distance += math.sqrt((cities[solution[-1]][0] - cities[solution[0]][0]) ** 2 + (cities[solution[-1]][1] - cities[solution[0]][1]) ** 2)
-    return total_distance
-
-# Critério de parada simples (por exemplo, quando a solução não melhora em 10 iterações consecutivas)
-def stop_criteria(solution):
-    return False  # Apenas exemplo, pode ser configurado para parar quando necessário
-
-# Exemplo de execução
-cities = [(random.randint(0, 100), random.randint(0, 100)) for _ in range(10)]
-initial_solution = list(range(len(cities)))
-random.shuffle(initial_solution)
-
-tabu_search = TabuSearchGeneric(
-    initial_solution=initial_solution,
-    tabu_list_size=5,
-    max_iterations=100,
-    neighbor_func=tsp_neighbors,
-    eval_func=lambda solution: tsp_evaluate(solution, cities),
-    stop_func=stop_criteria
-)
-
-best_solution = tabu_search.search()
-print(f"\nBest solution found: {best_solution}")
+if __name__ == "__main__":
+    import math
+    
+    # Exemplo de uso com um problema de Caixeiro Viajante
+    
+    # Função para gerar vizinhos (trocar duas cidades de lugar)
+    def tsp_neighbors(solution):
+        neighbors = []
+        for i in range(len(solution)):
+            for j in range(i + 1, len(solution)):
+                neighbor = solution[:]
+                neighbor[i], neighbor[j] = neighbor[j], neighbor[i]  # Troca de cidades
+                neighbors.append(neighbor)
+        return neighbors
+    
+    # Função para avaliar a solução (distância total)
+    def tsp_evaluate(solution, cities):
+        total_distance = 0
+        for i in range(len(solution) - 1):
+            total_distance += math.sqrt((cities[solution[i + 1]][0] - cities[solution[i]][0]) ** 2 + (cities[solution[i + 1]][1] - cities[solution[i]][1]) ** 2)
+        # Volta à cidade inicial
+        total_distance += math.sqrt((cities[solution[-1]][0] - cities[solution[0]][0]) ** 2 + (cities[solution[-1]][1] - cities[solution[0]][1]) ** 2)
+        return total_distance
+    
+    # Critério de parada simples (por exemplo, quando a solução não melhora em 10 iterações consecutivas)
+    def stop_criteria(solution):
+        return False  # Apenas exemplo, pode ser configurado para parar quando necessário
+    
+    # Exemplo de execução
+    cities = [(random.randint(0, 100), random.randint(0, 100)) for _ in range(10)]
+    initial_solution = list(range(len(cities)))
+    random.shuffle(initial_solution)
+    
+    tabu_search = TabuSearchBase(
+        initial_solution=initial_solution,
+        tabu_list_size=5,
+        max_iterations=100,
+        neighbor_func=tsp_neighbors,
+        eval_func=lambda solution: tsp_evaluate(solution, cities),
+        stop_func=stop_criteria
+    )
+    
+    best_solution = tabu_search.search()
+    print(f"\nBest solution found: {best_solution}")

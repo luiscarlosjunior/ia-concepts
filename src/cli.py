@@ -1,5 +1,5 @@
 import random
-from algorithms.greedy.hill_climbing_visualization import HillClimbingVisualization
+from src.algorithms.greedy.hill_climbing_visualization import HillClimbingVisualization
 from src.algorithms.greedy.hill_climbing_simple import HillClimbing
 from src.services.pegar_coordenada import PegarCoordenadaJanela
 
@@ -9,7 +9,8 @@ def hill_climbing(cidades):
     print(cidades)
     best_tour_json = HillClimbing().hill_climbing(cidades)
     print(f"Best tour history in JSON format: {best_tour_json}")
-    #HillClimbingVisualization().main()
+    # Visualização desabilitada por padrão
+    # Para habilitar: HillClimbingVisualization().main()
 
 def simulated_annealing():
     print("Executando Simulated Annealing...")
@@ -30,7 +31,11 @@ def main():
     for key, value in algorithms.items():
         print(f"[{key}] -> {value.__name__}")
 
-    choice = int(input("Digite o número do algoritmo: "))
+    try:
+        choice = int(input("Digite o número do algoritmo: "))
+    except ValueError:
+        print("Entrada inválida. Por favor, digite um número.")
+        return
 
     if choice in algorithms:
         algorithms[choice](cidades)
@@ -46,13 +51,17 @@ def get_city_coordinates():
             capturador = PegarCoordenadaJanela()
             cidades = capturador.janela()
         else:
-            num_cities = int(input("Digite o número de cidades: "))
-            for i in range(num_cities):
-                x = int(input(f"Digite a coordenada x da cidade {i+1}: "))
-                y = int(input(f"Digite a coordenada y da cidade {i+1}: "))
-                cidades.append((x, y))
+            try:
+                num_cities = int(input("Digite o número de cidades: "))
+                for i in range(num_cities):
+                    x = int(input(f"Digite a coordenada x da cidade {i+1}: "))
+                    y = int(input(f"Digite a coordenada y da cidade {i+1}: "))
+                    cidades.append((x, y))
+            except ValueError:
+                print("Entrada inválida. Gerando coordenadas aleatórias.")
+                cidades = [(random.randint(0, 100), random.randint(0, 100)) for _ in range(10)]
     else:
-        print("Gerando coordenadas aleatórios")
+        print("Gerando coordenadas aleatórias")
         cidades = [(random.randint(0, 100), random.randint(0, 100)) for _ in range(10)]
     
     print("Coordenadas cidades")
