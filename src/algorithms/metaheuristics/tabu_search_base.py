@@ -1,7 +1,7 @@
 import random
 import pandas as pd
 
-class TabuSearchGeneric:
+class TabuSearchBase:
     def __init__(self, initial_solution, tabu_list_size, max_iterations, neighbor_func, eval_func, stop_func=None):
         """
         Args:
@@ -27,7 +27,7 @@ class TabuSearchGeneric:
         Função para retornar os parâmetros e soluções para análise externa.
         """
         return {
-            "algoritmo": "tabu_search_generic",
+            "algoritmo": "tabu_search_base",
             "solucao_inicial": self.current_solution,
             "melhor_solucao": self.best_solution
         }
@@ -120,7 +120,7 @@ cities = [(random.randint(0, 100), random.randint(0, 100)) for _ in range(10)]
 initial_solution = list(range(len(cities)))
 random.shuffle(initial_solution)
 
-tabu_search = TabuSearchGeneric(
+tabu_search = TabuSearchBase(
     initial_solution=initial_solution,
     tabu_list_size=5,
     max_iterations=100,

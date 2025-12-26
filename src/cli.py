@@ -1,5 +1,5 @@
 import random
-from algorithms.greedy.hill_climbing_visualization import HillClimbingVisualization
+from src.algorithms.greedy.hill_climbing_visualization import HillClimbingVisualization
 from src.algorithms.greedy.hill_climbing_simple import HillClimbing
 from src.services.pegar_coordenada import PegarCoordenadaJanela
 
